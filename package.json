@@ -13,6 +13,6 @@
     "mocha": "^7.2.0"
   },
   "dependencies": {
-    "": "^1.0.1"
+    "linkedlist": "^1.0.1"
   }
 }

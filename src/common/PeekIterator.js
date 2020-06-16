@@ -70,7 +70,7 @@ class PeekIterator {
       if (val === undefined) {
         const tmp = this.endToken;
         this.endToken = null;
-        return tmp;
+        val = tmp;
       }
     }
 

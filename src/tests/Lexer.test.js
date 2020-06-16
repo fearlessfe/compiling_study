@@ -63,4 +63,26 @@ describe('Lexer', () => {
     assertToken(tokens[19], '100', TokenType.INTEGER);
     assertToken(tokens[20], ')', TokenType.BRACKET);
   });
+
+  it('delete comment', () => {
+    const lexer = new Lexer();
+    const source = '/*123213214124213\n1231241241*/a=1';
+    const it = arrayToGenerate([...source]);
+    const tokens = lexer.analyse(it);
+    assert.equal(tokens.length, 3);
+    assertToken(tokens[0], 'a', TokenType.VARIABLE);
+    assertToken(tokens[1], '=', TokenType.OPERATOR);
+    assertToken(tokens[2], '1', TokenType.INTEGER);
+  });
+
+  it('delete one line comment', () => {
+    const lexer = new Lexer();
+    const source = '//asss\na=1';
+    const it = arrayToGenerate([...source]);
+    const tokens = lexer.analyse(it);
+    assert.equal(tokens.length, 3);
+    assertToken(tokens[0], 'a', TokenType.VARIABLE);
+    assertToken(tokens[1], '=', TokenType.OPERATOR);
+    assertToken(tokens[2], '1', TokenType.INTEGER);
+  });
 });
