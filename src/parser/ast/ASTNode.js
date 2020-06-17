@@ -25,6 +25,11 @@ class ASTNode {
   getChildren() {
     return this.children;
   }
+
+  print(indent = 0) {
+    console.log(`${''.padStart(indent * 2, '')}${this.label}`);
+    this.children.forEach(child => child.print(indent + 1));
+  }
 }
 
 module.exports = ASTNode;

@@ -40,9 +40,9 @@ class PeekIterator {
       return this.stackPutBacks.tail;
     }
     const val = this.next();
-    if (val && val.length) {
-      this.putBack();
-    }
+    // if (val && val.length) {
+    this.putBack();
+    // }
 
     return val;
   }

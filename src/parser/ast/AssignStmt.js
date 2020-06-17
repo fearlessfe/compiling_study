@@ -1,5 +1,5 @@
-const Stml = require('./Stmt');
-const ASTNodeTypes = require('./ASTNodeTypes');
+const Stml = require('../Stmt');
+const ASTNodeTypes = require('../ASTNodeTypes');
 
 class AssignStmt extends Stml {
   constructor(parent) {
